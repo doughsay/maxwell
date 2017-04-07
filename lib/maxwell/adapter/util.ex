@@ -4,12 +4,10 @@ defmodule Maxwell.Adapter.Util do
   """
 
   @chunk_size 4 * 1024 * 1024
-  alias Maxwell.Conn
-  alias Maxwell.Multipart
+  alias Maxwell.{Conn, Multipart, Query}
 
   @doc """
-  Append path and query string to url,
-  query string encode by `URI.encode_query/1`.
+  Append path and query string to url
 
   * `url`   - `conn.url`
   * `path`  - `conn.path`
@@ -138,9 +136,8 @@ defmodule Maxwell.Adapter.Util do
 
   defp append_query_string(url, path, query)when query == %{}, do: url <> path
   defp append_query_string(url, path, query) do
-    query_string = URI.encode_query(query)
+    query_string = Query.encode(query)
     url <> path <> "?" <> query_string
   end
 
 end
-
