@@ -1,6 +1,6 @@
-# The following module was shamelessly yanked from Plug:
+# The following module was copied from Plug:
 # https://raw.githubusercontent.com/elixir-lang/plug/91b8f57dcc495735925553bcf6c53a0d0e413d86/lib/plug/conn/query.ex
-
+# With permission: https://github.com/elixir-lang/plug/issues/539
 defmodule Maxwell.Query do
   @moduledoc """
   Conveniences for decoding and encoding url encoded queries.
